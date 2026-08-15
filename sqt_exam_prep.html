@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQT Exam Prep — Important Questions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+  <header class="site-header">
+    <h1>Software Quality &amp; Testing</h1>
+    <p>Exam Prep · 12 Important Questions · Sections I, II &amp; III</p>
+  </header>
+
+  <!-- Section nav -->
+  <div class="section-nav">
+    <button class="section-btn active" onclick="showSection('s1')">Section I — Unit 1</button>
+    <button class="section-btn" onclick="showSection('s2')">Section II — Unit 2</button>
+    <button class="section-btn" onclick="showSection('s3')">Section III — Unit 3</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION I — Q2, Q4, Q6, Q8, Q10
+  ═══════════════════════════════════════════════ -->
+  <div class="section-panel active" id="s1">
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" onclick="showTab('s1',0)">Q2 · COQ Model</button>
+      <button class="tab-btn" onclick="showTab('s1',1)">Q4 · McCall vs Boehm</button>
+      <button class="tab-btn" onclick="showTab('s1',2)">Q6 · CMMI</button>
+      <button class="tab-btn" onclick="showTab('s1',3)">Q8 · AI Ethics</button>
+      <button class="tab-btn" onclick="showTab('s1',4)">Q10 · SQA Framework</button>
+    </div>
+
+    <!-- Q2 -->
+    <div class="tab-content active" id="s1-tab-0">
+      <div class="question-block">
+        <h2 class="q-title">Q2. Analyse the Cost of Quality (COQ) model and illustrate the different categories of quality costs with suitable software engineering examples. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>What is Cost of Quality?</h3>
+          <p>The <strong>Cost of Quality (COQ)</strong> model, proposed by Philip Crosby, categorizes all costs an organization incurs to ensure product quality — both the costs of achieving quality and the costs of failing to achieve it. The goal is to minimize total quality costs by investing wisely in prevention and appraisal rather than paying heavily for failures after the fact.</p>
+
+          <h3>The Four Categories</h3>
+
+          <h4>1. Prevention Costs</h4>
+          <p>Costs incurred to <strong>prevent defects from occurring</strong> in the first place. These are proactive investments.</p>
+          <ul>
+            <li>Requirements analysis and review</li>
+            <li>Developer training and skill development</li>
+            <li>Design reviews and walkthroughs</li>
+            <li>Process planning and documentation</li>
+            <li>Static code analysis tool setup</li>
+          </ul>
+
+          <h4>2. Appraisal Costs</h4>
+          <p>Costs incurred to <strong>evaluate and measure</strong> software quality — detecting defects before delivery.</p>
+          <ul>
+            <li>Unit testing, integration testing, system testing</li>
+            <li>Code reviews and inspections</li>
+            <li>Test environment setup and maintenance</li>
+            <li>Quality audits</li>
+            <li>Test documentation</li>
+          </ul>
+
+          <h4>3. Internal Failure Costs</h4>
+          <p>Costs incurred when defects are found <strong>before delivery to the customer</strong>. These arise from failures caught during testing.</p>
+          <ul>
+            <li>Rework — fixing bugs found during development</li>
+            <li>Re-testing after a bug fix</li>
+            <li>Debugging time</li>
+            <li>Defect analysis meetings</li>
+          </ul>
+
+          <h4>4. External Failure Costs</h4>
+          <p>Costs incurred when defects are found <strong>after delivery</strong> — the most expensive category. These represent failures that reached the customer.</p>
+          <ul>
+            <li>Customer complaint handling</li>
+            <li>Post-release bug fixes and patch releases</li>
+            <li>Warranty repairs</li>
+            <li>Loss of customer trust and reputation damage</li>
+            <li>Legal liability in critical systems</li>
+          </ul>
+
+          <div class="callout warn">
+            <strong>Key insight:</strong> External failure costs are the most expensive. Investing more in prevention and appraisal dramatically reduces internal and external failures — this is the core philosophy of COQ.
+          </div>
+
+          <h3>Summary Comparison</h3>
+          <table>
+            <tr><th>Category</th><th>When it occurs</th><th>Goal</th></tr>
+            <tr><td>Prevention</td><td>Before development</td><td>Stop defects from entering</td></tr>
+            <tr><td>Appraisal</td><td>During development/testing</td><td>Detect defects early</td></tr>
+            <tr><td>Internal Failure</td><td>Before release</td><td>Fix before customer sees it</td></tr>
+            <tr><td>External Failure</td><td>After release</td><td>Avoid at all costs</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="tab-content" id="s1-tab-1">
+      <div class="question-block">
+        <h2 class="q-title">Q4. Compare and analyse McCall's Quality Model and Boehm's Quality Model with respect to their quality factors, structural framework, and practical applications. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>McCall's Quality Model (1977)</h3>
+          <p>Proposed by Jim McCall, this model evaluates software quality from <strong>three user perspectives</strong> and defines 11 quality factors accordingly.</p>
+
+          <h4>Three Perspectives</h4>
+          <table>
+            <tr><th>Perspective</th><th>Focus</th><th>Quality Factors</th></tr>
+            <tr><td><strong>Product Operation</strong></td><td>How well it runs</td><td>Correctness, Reliability, Efficiency, Integrity, Usability</td></tr>
+            <tr><td><strong>Product Revision</strong></td><td>How well it can be changed</td><td>Maintainability, Testability, Flexibility</td></tr>
+            <tr><td><strong>Product Transition</strong></td><td>How well it adapts to new environments</td><td>Portability, Reusability, Interoperability</td></tr>
+          </table>
+
+          <p>Each factor is measured through specific <strong>quality criteria and metrics</strong>. For example, Correctness is measured by completeness and traceability of requirements.</p>
+
+          <h3>Boehm's Quality Model (1978)</h3>
+          <p>Proposed by Barry Boehm, this model uses a <strong>hierarchical tree structure</strong> with three levels of abstraction — from general to primitive measurable characteristics.</p>
+
+          <h4>Structure</h4>
+          <ul>
+            <li><strong>Level 1 — High-level characteristics:</strong> General Utility, which branches into As-is Utility and Maintainability</li>
+            <li><strong>Level 2 — Intermediate characteristics:</strong> Portability, Reliability, Efficiency, Human Engineering, Testability, Understandability, Modifiability</li>
+            <li><strong>Level 3 — Primitive characteristics (measurable):</strong> Device Independence, Self Contained, Accuracy, Completeness, Robustness/Integrity, Consistency, Accountability, etc.</li>
+          </ul>
+
+          <h3>Comparison Table</h3>
+          <table>
+            <tr><th>Aspect</th><th>McCall's Model</th><th>Boehm's Model</th></tr>
+            <tr><td>Structure</td><td>Flat — 3 perspectives, 11 factors</td><td>Hierarchical tree — 3 levels deep</td></tr>
+            <tr><td>Focus</td><td>User and stakeholder perspectives</td><td>General utility of the product</td></tr>
+            <tr><td>Measurability</td><td>Via criteria and metrics per factor</td><td>Via primitive leaf-level characteristics</td></tr>
+            <tr><td>Emphasis</td><td>Product operation, transition &amp; revision</td><td>As-is utility and maintainability</td></tr>
+            <tr><td>Practical use</td><td>Better for commercial &amp; user-facing systems</td><td>Better for system-level quality evaluation</td></tr>
+            <tr><td>Year</td><td>1977</td><td>1978</td></tr>
+          </table>
+
+          <div class="callout">
+            <strong>Common ground:</strong> Both are black-box quality frameworks that evaluate what the software delivers rather than how it is built internally. Both are foundational models that later standards like ISO 9126 built upon.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="tab-content" id="s1-tab-2">
+      <div class="question-block">
+        <h2 class="q-title">Q6. Apply the Capability Maturity Model Integration (CMMI) maturity model to a software organization and explain how each maturity level contributes to improving software quality, with suitable examples. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>What is CMMI?</h3>
+          <p><strong>CMMI (Capability Maturity Model Integration)</strong> is a process improvement framework developed by the SEI (Software Engineering Institute). It defines five maturity levels that describe how well an organization's processes are defined, managed, measured, and optimized. Moving up the levels means progressively better software quality and predictability.</p>
+
+          <h3>The Five Maturity Levels</h3>
+
+          <h4>Level 1 — Initial</h4>
+          <p>Processes are <strong>unpredictable, reactive, and chaotic</strong>. Success depends on individual heroics rather than documented processes. Deadlines are missed, bugs are frequent, and there's no systematic way of working.</p>
+          <p><em>Example: A startup where each developer codes in their own style, there's no testing process, and releases happen whenever someone feels ready.</em></p>
+
+          <h4>Level 2 — Managed</h4>
+          <p>Basic <strong>project management practices</strong> are established. Requirements are managed, projects are planned and tracked, and there's some repeatability.</p>
+          <p><em>Example: The team now has a requirements document, a project timeline, and tracks bugs using a tool like JIRA.</em></p>
+
+          <h4>Level 3 — Defined</h4>
+          <p>The organization has <strong>standardized, documented processes</strong> across all projects. Everyone follows the same methodology rather than ad hoc approaches per project.</p>
+          <p><em>Example: All projects use the same SDLC model, code review process, and testing standards. Documentation is consistent and complete.</em></p>
+
+          <h4>Level 4 — Quantitatively Managed</h4>
+          <p>Processes are <strong>measured and controlled</strong> using statistical methods. Management uses data-driven insights to understand and control process performance.</p>
+          <p><em>Example: The team tracks defect density (bugs per 1000 lines of code), test coverage percentages, and uses these metrics to predict release quality before shipping.</em></p>
+
+          <h4>Level 5 — Optimizing</h4>
+          <p>Focus shifts to <strong>continuous process improvement</strong> and proactive defect prevention. The organization learns from data and adapts processes to improve further.</p>
+          <p><em>Example: The team analyzes root causes of past defects and proactively updates their development practices to eliminate entire categories of bugs.</em></p>
+
+          <h3>Contribution to Software Quality</h3>
+          <table>
+            <tr><th>Level</th><th>Quality Outcome</th></tr>
+            <tr><td>1 → 2</td><td>Reduces project failures due to unmanaged requirements</td></tr>
+            <tr><td>2 → 3</td><td>Consistent quality across all projects, not just well-managed ones</td></tr>
+            <tr><td>3 → 4</td><td>Predictable quality — managers can forecast defect rates</td></tr>
+            <tr><td>4 → 5</td><td>Proactive quality — prevents defects before they occur</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="tab-content" id="s1-tab-3">
+      <div class="question-block">
+        <h2 class="q-title">Q8. Evaluate the major ethical challenges in AI-based software systems and recommend appropriate strategies to minimize algorithmic bias and ensure fairness, transparency, and accountability. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Major Ethical Challenges in AI Systems</h3>
+
+          <h4>1. Algorithmic Bias</h4>
+          <p>AI models trained on biased or unrepresentative data produce biased outputs. This can lead to discriminatory outcomes in hiring, lending, healthcare, and criminal justice.</p>
+          <p><em>Example: A hiring AI trained mostly on male resumes systematically ranks female candidates lower, regardless of qualifications.</em></p>
+
+          <h4>2. Lack of Transparency (Black Box Problem)</h4>
+          <p>Many AI models, especially deep learning models, cannot explain how they arrived at a decision. This makes it impossible for users or regulators to verify fairness or correctness.</p>
+          <p><em>Example: A loan rejection by an AI system cannot be explained to the customer in understandable terms.</em></p>
+
+          <h4>3. Privacy and Data Misuse</h4>
+          <p>AI systems require massive amounts of data, often personal, raising concerns about consent, data storage, and unauthorized use.</p>
+          <p><em>Example: Facial recognition systems collecting biometric data without user consent.</em></p>
+
+          <h4>4. Accountability Gaps</h4>
+          <p>When an AI system makes a harmful decision, it is unclear who is responsible — the developer, the organization, or the AI itself. This creates legal and moral ambiguity.</p>
+
+          <h4>5. Fairness Across Demographics</h4>
+          <p>Ensuring equal treatment across age, gender, race, and income groups is technically difficult — optimizing for one group's fairness can worsen outcomes for another.</p>
+
+          <h3>Recommended Strategies</h3>
+          <table>
+            <tr><th>Challenge</th><th>Strategy</th></tr>
+            <tr><td>Bias</td><td>Use diverse, representative training datasets; conduct regular bias audits; apply fairness-aware ML techniques</td></tr>
+            <tr><td>Transparency</td><td>Implement Explainable AI (XAI) techniques like LIME and SHAP; provide human-readable justifications for decisions</td></tr>
+            <tr><td>Privacy</td><td>Apply differential privacy, federated learning, data minimization; obtain explicit user consent</td></tr>
+            <tr><td>Accountability</td><td>Define clear governance frameworks; establish AI ethics boards; maintain audit trails of AI decisions</td></tr>
+            <tr><td>Fairness</td><td>Conduct fairness testing across demographic groups before deployment; involve affected communities in design</td></tr>
+          </table>
+
+          <div class="callout good">
+            <strong>Conclusion:</strong> Ethical AI requires a combination of technical solutions (XAI, fairness metrics) and organizational measures (governance, audits, human oversight). No single fix addresses all challenges — a holistic approach is essential.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="tab-content" id="s1-tab-4">
+      <div class="question-block">
+        <h2 class="q-title">Q10. Design and justify a comprehensive Software Quality Assurance (SQA) framework for an AI-enabled healthcare application. The framework should address software quality, ethical risks, fairness, transparency, and accountability. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Context</h3>
+          <p>An AI-enabled healthcare application (e.g., a diagnostic system or patient risk predictor) must meet exceptionally high standards — errors can directly harm patients. The SQA framework must address both traditional software quality and AI-specific ethical concerns.</p>
+
+          <h3>Proposed SQA Framework</h3>
+
+          <h4>1. Quality Requirements Definition</h4>
+          <p>Clearly define measurable quality attributes: accuracy of AI predictions (&gt;95%), system availability (&gt;99.9%), response time (&lt;2 seconds), and data security compliance (HIPAA/GDPR). These form the baseline against which all testing is evaluated.</p>
+
+          <h4>2. Ethical Risk Assessment</h4>
+          <p>Before development begins, conduct an ethical risk analysis:</p>
+          <ul>
+            <li>Identify potential biases in training data (e.g., underrepresentation of certain demographics)</li>
+            <li>Assess risks of misdiagnosis and their severity</li>
+            <li>Review data provenance and patient consent</li>
+          </ul>
+
+          <h4>3. Bias and Fairness Testing</h4>
+          <p>Validate AI model outputs across different demographic groups (age, gender, ethnicity) to ensure equitable performance. Use fairness metrics such as equal opportunity and disparate impact ratio. Any significant disparity triggers model retraining with balanced data.</p>
+
+          <h4>4. Transparency and Explainability Layer</h4>
+          <p>Integrate XAI tools (SHAP, LIME) so that every AI-generated diagnosis includes a human-readable explanation. Medical professionals must be able to understand why the system flagged a condition — not just accept a black-box result.</p>
+
+          <h4>5. Testing Strategy</h4>
+          <ul>
+            <li><strong>Unit Testing:</strong> Verify individual AI model components and API endpoints</li>
+            <li><strong>Integration Testing:</strong> Validate data flow between patient records system and AI engine</li>
+            <li><strong>Validation Testing:</strong> Test with real (anonymized) clinical data to verify real-world performance</li>
+            <li><strong>Regression Testing:</strong> After every model update, re-run full test suite to ensure no degradation</li>
+          </ul>
+
+          <h4>6. Human-in-the-Loop Requirement</h4>
+          <p>All critical diagnostic decisions generated by AI must be reviewed and approved by a licensed medical professional before reaching the patient. The AI assists; it does not decide autonomously in high-stakes scenarios.</p>
+
+          <h4>7. Accountability Framework</h4>
+          <ul>
+            <li>Maintain complete audit logs of all AI decisions with timestamps and model version</li>
+            <li>Establish a clear responsibility chain: developer → organization → physician</li>
+            <li>Conduct regular third-party audits of the AI system's performance and ethics compliance</li>
+          </ul>
+
+          <h4>8. Post-Deployment Monitoring</h4>
+          <p>Continuously monitor model performance in production using real data. Set up alerts for model drift (when real-world accuracy degrades from baseline). Schedule periodic retraining and re-validation cycles.</p>
+
+          <div class="callout">
+            <strong>Justification:</strong> This framework addresses software quality through rigorous testing, ethical risks through bias assessment and XAI, fairness through demographic validation, transparency through explainability layers, and accountability through audit trails and human oversight.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end section I -->
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION II — Q11, Q13, Q14, Q19, Q20
+  ═══════════════════════════════════════════════ -->
+  <div class="section-panel" id="s2">
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" onclick="showTab('s2',0)">Q11 · Test Plan</button>
+      <button class="tab-btn" onclick="showTab('s2',1)">Q13 · Test Scenarios &amp; Cases</button>
+      <button class="tab-btn" onclick="showTab('s2',2)">Q14 · COQ Scenario</button>
+      <button class="tab-btn" onclick="showTab('s2',3)">Q19 · Boehm's Model</button>
+      <button class="tab-btn" onclick="showTab('s2',4)">Q20 · Anomalies + BB</button>
+    </div>
+
+    <!-- Q11 -->
+    <div class="tab-content active" id="s2-tab-0">
+      <div class="question-block">
+        <h2 class="q-title">Q11. (a) Explain the purpose of a Test Plan and describe its key objectives. (b) Explain the major components of an IEEE 829 Test Plan. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Part A — Purpose of a Test Plan</h3>
+          <p>A <strong>Test Plan</strong> is a formal document that describes the scope, approach, resources, and schedule for a testing effort. It serves as the master blueprint that guides the entire testing process for a software project.</p>
+
+          <h4>Key Objectives</h4>
+          <ul>
+            <li>Define <strong>what will be tested</strong> and what will not be tested (scope)</li>
+            <li>Specify the <strong>testing approach and strategy</strong> — types of testing, tools, techniques</li>
+            <li>Identify <strong>resources required</strong> — people, tools, environments</li>
+            <li>Establish <strong>entry and exit criteria</strong> — when testing begins and ends</li>
+            <li>Serve as a <strong>communication document</strong> between developers, testers, and stakeholders</li>
+            <li>Provide a <strong>baseline</strong> for tracking testing progress and reporting</li>
+            <li>Define <strong>risk assessment and mitigation</strong> strategies for the testing effort</li>
+          </ul>
+
+          <h3>Part B — IEEE 829 Test Plan Components</h3>
+          <p>The IEEE 829 standard defines 16 sections that a comprehensive test plan should include:</p>
+
+          <table>
+            <tr><th>#</th><th>Component</th><th>Purpose</th></tr>
+            <tr><td>1</td><td>Test Plan Identifier</td><td>Unique ID to distinguish this test plan from others</td></tr>
+            <tr><td>2</td><td>Introduction</td><td>Overview, scope, and references to project documents</td></tr>
+            <tr><td>3</td><td>Test Items</td><td>List of software components/modules to be tested</td></tr>
+            <tr><td>4</td><td>Features to be Tested</td><td>Specific functionalities that will be tested</td></tr>
+            <tr><td>5</td><td>Features Not to be Tested</td><td>Explicitly excluded items and rationale</td></tr>
+            <tr><td>6</td><td>Approach</td><td>Testing strategy, techniques, and tools to be used</td></tr>
+            <tr><td>7</td><td>Item Pass/Fail Criteria</td><td>Defines what constitutes a pass or fail for each test item</td></tr>
+            <tr><td>8</td><td>Suspension &amp; Resumption Criteria</td><td>Conditions under which testing is halted or resumed</td></tr>
+            <tr><td>9</td><td>Test Deliverables</td><td>Documents and reports to be produced (test scripts, reports)</td></tr>
+            <tr><td>10</td><td>Testing Tasks</td><td>List of all testing activities and their sequence</td></tr>
+            <tr><td>11</td><td>Environmental Needs</td><td>Hardware, software, tools, and data required</td></tr>
+            <tr><td>12</td><td>Responsibilities</td><td>Who is responsible for which testing activity</td></tr>
+            <tr><td>13</td><td>Staffing and Training Needs</td><td>Headcount and skills required for the testing team</td></tr>
+            <tr><td>14</td><td>Schedule</td><td>Timeline for testing activities</td></tr>
+            <tr><td>15</td><td>Risks and Contingencies</td><td>Identified risks and plans to handle them</td></tr>
+            <tr><td>16</td><td>Approvals</td><td>Sign-off from stakeholders confirming the test plan is accepted</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="tab-content" id="s2-tab-1">
+      <div class="question-block">
+        <h2 class="q-title">Q13. (a) Explain the concept of a Test Scenario and illustrate how it identifies software functionality to be tested. (b) Differentiate between Positive and Negative Test Cases. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Part A — Test Scenario</h3>
+
+          <h4>Definition</h4>
+          <p>A <strong>Test Scenario</strong> is a high-level, one-line description of a functionality or situation to be tested. It describes <em>what</em> needs to be tested, not <em>how</em>. It is derived from requirements, use cases, or user stories and acts as a parent container for one or more test cases.</p>
+
+          <h4>Key Characteristics</h4>
+          <ul>
+            <li>Written as a <strong>single statement</strong> — brief and non-technical</li>
+            <li>Describes the <strong>situation or functionality</strong> under test</li>
+            <li>Does <strong>not change</strong> once defined for a given requirement</li>
+            <li>One test scenario gives rise to <strong>multiple test cases</strong></li>
+            <li>Does not specify inputs, steps, or expected results — that is the test case's job</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Example Test Scenario:</strong> "Verify that a registered user can log in to the system."
+          </div>
+
+          <h4>Test Scenario vs Test Case — The Critical Distinction</h4>
+          <table>
+            <tr><th>Aspect</th><th>Test Scenario</th><th>Test Case</th></tr>
+            <tr><td>Granularity</td><td>High-level, one line</td><td>Detailed, multi-part</td></tr>
+            <tr><td>Answers</td><td>WHAT to test</td><td>HOW to test</td></tr>
+            <tr><td>Contains</td><td>A brief description of the situation</td><td>Test ID, preconditions, steps, input data, expected output, actual output, status</td></tr>
+            <tr><td>Quantity</td><td>Fewer — one per major functionality</td><td>Many — multiple per scenario</td></tr>
+            <tr><td>Changes?</td><td>Stays fixed for a given requirement</td><td>May be added or modified as testing expands</td></tr>
+          </table>
+
+          <p>For the scenario "Verify login functionality," the resulting test cases would be:</p>
+          <ul>
+            <li>TC1: Enter valid username + valid password → system grants access</li>
+            <li>TC2: Enter valid username + wrong password → error message shown</li>
+            <li>TC3: Enter empty username field → validation error shown</li>
+            <li>TC4: Enter empty password field → validation error shown</li>
+            <li>TC5: Enter unregistered username → "user not found" message shown</li>
+          </ul>
+          <p>All five test cases derive from one test scenario. The scenario is the umbrella; the test cases are the detailed rain.</p>
+
+          <h3>Part B — Positive vs Negative Test Cases</h3>
+          <table>
+            <tr><th>Aspect</th><th>Positive Test Cases</th><th>Negative Test Cases</th></tr>
+            <tr><td>Purpose</td><td>Verify system works correctly with valid inputs</td><td>Verify system handles invalid/unexpected inputs gracefully</td></tr>
+            <tr><td>Tests</td><td>The "happy path" — expected use</td><td>Error handling, edge cases, boundary violations</td></tr>
+            <tr><td>Input</td><td>Valid, expected data</td><td>Invalid, out-of-range, or unexpected data</td></tr>
+            <tr><td>Expected outcome</td><td>Successful operation</td><td>Appropriate error message, no crash</td></tr>
+            <tr><td>Example</td><td>Login with correct credentials → access granted</td><td>Login with wrong password → "Invalid credentials" error displayed</td></tr>
+          </table>
+
+          <div class="callout warn">
+            <strong>Why both matter:</strong> Positive tests confirm the system does what it should. Negative tests confirm the system doesn't do what it shouldn't — and doesn't break in the process. Skipping negative tests is one of the biggest causes of production bugs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="tab-content" id="s2-tab-2">
+      <div class="question-block">
+        <h2 class="q-title">Q14. Explain COQ and its categories. An e-commerce company spends ₹10 lakhs annually on customer complaints and post-release bug fixes. Analyse the quality costs and recommend strategies to reduce COQ. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Cost of Quality — Categories</h3>
+          <p><strong>Cost of Quality (COQ)</strong> refers to the total cost incurred by an organization to achieve and maintain software quality. It has four categories:</p>
+          <ul>
+            <li><strong>Prevention Costs:</strong> Costs to prevent defects (training, design reviews, process planning)</li>
+            <li><strong>Appraisal Costs:</strong> Costs to evaluate quality (testing, audits, code reviews)</li>
+            <li><strong>Internal Failure Costs:</strong> Costs when defects found before delivery (rework, debugging)</li>
+            <li><strong>External Failure Costs:</strong> Costs when defects found after delivery (customer complaints, post-release patches, reputation damage)</li>
+          </ul>
+
+          <h3>Analysis of the E-Commerce Scenario</h3>
+          <p>The company is spending <strong>₹10 lakhs annually on customer complaints and post-release bug fixes</strong>. Both of these are textbook <span class="danger"><strong>External Failure Costs</strong></span> — the most expensive and most damaging category of quality cost.</p>
+
+          <div class="callout warn">
+            <strong>This is a serious red flag.</strong> Heavy external failure costs indicate that defects are escaping through the entire development and testing pipeline and reaching customers. This means the company is significantly underinvesting in prevention and appraisal.
+          </div>
+
+          <h4>Root Cause Assessment</h4>
+          <ul>
+            <li>Customer complaints → bugs in production-facing modules (cart, checkout, payment, search)</li>
+            <li>Post-release bug fixes → insufficient testing before deployment; critical modules not covered</li>
+            <li>High external cost → low prevention investment means defects are not caught early enough</li>
+          </ul>
+
+          <h3>Recommendations to Reduce COQ</h3>
+
+          <h4>1. Increase Investment in Prevention</h4>
+          <p>Invest in better requirements review, developer training, and design validation. Catching issues at the requirements stage costs a fraction of fixing them post-release.</p>
+
+          <h4>2. Strengthen Appraisal Activities</h4>
+          <p>Implement rigorous testing before every release — especially for high-risk modules like the shopping cart, payment gateway, and order management. Add automated regression testing to catch regressions early.</p>
+
+          <h4>3. Prioritize Testing of Critical Modules</h4>
+          <p>Not all modules are equal. The checkout and payment flow generate the most customer impact if they fail — allocate disproportionate testing effort there.</p>
+
+          <h4>4. Bring Customer Feedback into the Loop Earlier</h4>
+          <p>Implement beta testing or UAT (User Acceptance Testing) with a small group of real customers before full deployment. This catches real-world issues before they become post-release complaints.</p>
+
+          <h4>5. Root Cause Analysis on Existing Complaints</h4>
+          <p>Categorize and analyze the ₹10 lakhs worth of complaints to identify which modules and which defect types generate the most cost. Fix the systemic causes rather than individual bugs.</p>
+
+          <div class="callout good">
+            <strong>Expected outcome:</strong> Shifting ₹2–3 lakhs from reactive external failure costs into prevention and appraisal will typically reduce total COQ significantly, since catching defects early is 10–100x cheaper than fixing them post-release.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="tab-content" id="s2-tab-3">
+      <div class="question-block">
+        <h2 class="q-title">Q19. Explain Boehm's Quality Model in detail. A hospital management system leaks patient information. Which software quality attribute has failed? <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Boehm's Quality Model</h3>
+          <p>Proposed by Barry Boehm in 1978, this is a <strong>hierarchical quality model</strong> that breaks down software quality into three levels of abstraction — from broad characteristics down to primitive, measurable attributes. The top-level goal is achieving <strong>General Utility</strong> — the overall usefulness of the software.</p>
+
+          <h3>Level 1 — High-Level Characteristics</h3>
+          <ul>
+            <li><strong>As-is Utility:</strong> How useful the software is in its current form — can it be used effectively, reliably, and efficiently right now?</li>
+            <li><strong>Maintainability:</strong> How easily the software can be understood, modified, and kept up to date over time.</li>
+          </ul>
+
+          <h3>Level 2 — Intermediate Characteristics</h3>
+          <p>As-is Utility decomposes into the following intermediate characteristics:</p>
+          <ul>
+            <li><strong>Portability:</strong> Ability to run across different hardware and software environments</li>
+            <li><strong>Reliability:</strong> Ability to perform correctly under defined conditions — consistently and accurately</li>
+            <li><strong>Efficiency:</strong> Optimal use of system resources (memory, CPU, storage)</li>
+            <li><strong>Human Engineering:</strong> Ease of use — how accessible and communicative the interface is</li>
+            <li><strong>Testability:</strong> How easily the software can be tested and verified</li>
+            <li><strong>Understandability:</strong> How easily the software's purpose and structure can be understood</li>
+            <li><strong>Modifiability:</strong> How easily the software can be changed or extended</li>
+          </ul>
+
+          <h3>Level 3 — Primitive Characteristics (Measurable)</h3>
+          <p>These are the leaf-level, directly measurable attributes. Key ones include:</p>
+          <table>
+            <tr><th>Intermediate Characteristic</th><th>Primitive Attributes</th></tr>
+            <tr><td>Portability</td><td>Device Independence, Self-Contained</td></tr>
+            <tr><td>Reliability</td><td>Accuracy, Completeness, Robustness/Integrity, Consistency</td></tr>
+            <tr><td>Human Engineering</td><td>Accessibility, Communicativeness</td></tr>
+            <tr><td>Understandability</td><td>Self-Descriptiveness, Conciseness, Legibility</td></tr>
+            <tr><td>Modifiability</td><td>Augmentability, Structuredness</td></tr>
+            <tr><td>Maintainability</td><td>Accountability, Device Efficiency</td></tr>
+          </table>
+
+          <h3>Hospital Scenario — Which Attribute Failed?</h3>
+          <p>A hospital management system that <strong>leaks patient information</strong> has suffered a failure at multiple levels of Boehm's model:</p>
+
+          <div class="callout warn">
+            <strong>Primary failure: Reliability</strong> — specifically the primitive attribute of <strong>Robustness/Integrity</strong>. The system failed to maintain data integrity and protect information against unauthorized access or leakage, which is a direct measure of how robustly the system performs under adverse conditions.
+          </div>
+
+          <ul>
+            <li><strong>Robustness/Integrity</strong> (under Reliability): The system did not protect the integrity of patient data — it allowed sensitive information to be exposed, which is exactly what Robustness/Integrity guards against.</li>
+            <li><strong>Accountability</strong> (under Maintainability): The system failed to maintain traceable, accountable access to sensitive data — there was no mechanism preventing or logging unauthorized access.</li>
+            <li><strong>Accuracy</strong> (under Reliability): If leaked data was also corrupted, accuracy has also failed.</li>
+          </ul>
+
+          <p>In summary, the hospital system failed primarily on <strong>Reliability → Robustness/Integrity</strong> and secondarily on <strong>Accountability</strong>, both of which are primitive characteristics in Boehm's Quality Model.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="tab-content" id="s2-tab-4">
+      <div class="question-block">
+        <h2 class="q-title">Q20. (a) Define: Error, Defect, Fault and Failure. (b) Discuss the importance of Black Box Design Techniques. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Part A — Software Anomalies</h3>
+          <p>These four terms describe different stages of how a software problem originates and manifests:</p>
+
+          <div class="chain">
+            <div class="chain-item">Human Error</div>
+            <div class="chain-arrow">→</div>
+            <div class="chain-item">Fault / Defect in Code</div>
+            <div class="chain-arrow">→</div>
+            <div class="chain-item">Failure at Runtime</div>
+          </div>
+
+          <h4>Error</h4>
+          <p>An <strong>error is a human mistake</strong> made during any phase of software development. It is the root cause — something a person did wrong.</p>
+          <p><em>Example: A developer misunderstands a requirement and codes an incorrect formula for tax calculation.</em></p>
+
+          <h4>Fault (Defect / Bug)</h4>
+          <p>A <strong>fault is the result of an error</strong> — a flaw that exists in the software artifact (source code, design document, or test). It is a static defect that may or may not yet have caused any visible problem.</p>
+          <p><em>Example: The wrong tax formula is now in the source code. The defect exists even if no one has run the program yet.</em></p>
+
+          <h4>Failure</h4>
+          <p>A <strong>failure is the observable, runtime manifestation</strong> of a fault — when the software executes the faulty code and produces incorrect behavior. It is what the user actually sees.</p>
+          <p><em>Example: A customer is charged the wrong amount at checkout because the faulty tax formula executes.</em></p>
+
+          <table>
+            <tr><th>Term</th><th>Who causes it</th><th>When visible</th><th>Nature</th></tr>
+            <tr><td>Error</td><td>Human (developer, analyst)</td><td>During development</td><td>The mistake itself</td></tr>
+            <tr><td>Fault/Defect</td><td>Caused by Error</td><td>Exists in the code statically</td><td>The flaw in the artifact</td></tr>
+            <tr><td>Failure</td><td>Triggered by Fault</td><td>At runtime / in production</td><td>Observable incorrect behavior</td></tr>
+          </table>
+
+          <h3>Part B — Importance of Black Box Design Techniques</h3>
+          <p><strong>Black Box Testing</strong> tests a system's functionality purely from an external perspective — based on requirements and specifications — without any knowledge of the internal code structure or implementation.</p>
+
+          <h4>Why It's Important</h4>
+          <ul>
+            <li><strong>User-perspective validation:</strong> Tests the system exactly as a real user would experience it — confirming that what the software delivers matches what was promised.</li>
+            <li><strong>Requirements-based:</strong> Test cases are derived from specifications, ensuring complete coverage of all stated requirements.</li>
+            <li><strong>Independent of implementation:</strong> Can be performed by testers who don't know the internals — reduces bias and catches integration issues developers might overlook.</li>
+            <li><strong>Catches functional defects:</strong> Identifies missing features, interface errors, incorrect outputs, and usability issues that white-box testing might miss.</li>
+            <li><strong>Applicable at all levels:</strong> Used in unit testing, integration testing, system testing, and acceptance testing.</li>
+          </ul>
+
+          <h4>Black Box Techniques</h4>
+          <ul>
+            <li>Equivalence Partitioning (EP)</li>
+            <li>Boundary Value Analysis (BVA)</li>
+            <li>Decision Table Testing</li>
+            <li>State Transition Testing</li>
+            <li>Use Case Testing</li>
+          </ul>
+
+          <div class="callout good">
+            <strong>Conclusion:</strong> Black box techniques are essential because they validate that the software meets user needs — not just that the code is internally consistent. They complement white box techniques to achieve comprehensive test coverage.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end section II -->
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION III — Q22, Q24
+  ═══════════════════════════════════════════════ -->
+  <div class="section-panel" id="s3">
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" onclick="showTab('s3',0)">Q22 · Black Box + BVA + EP</button>
+      <button class="tab-btn" onclick="showTab('s3',1)">Q24 · CMMI Startup</button>
+    </div>
+
+    <!-- Q22 -->
+    <div class="tab-content active" id="s3-tab-0">
+      <div class="question-block">
+        <h2 class="q-title">Q22. What is Black Box Testing? List all Black Box test design techniques. A university develops an Online Examination System with validations: Marks (0–100), Attendance (75–100%), Password (8–16 chars). Design test cases using BVA and EP. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>Black Box Testing</h3>
+          <p><strong>Black Box Testing</strong> is a testing technique that examines the functionality of software from an external perspective, without any knowledge of the internal code, structure, or implementation. Tests are based entirely on requirements and specifications — the system is treated as a "black box" where only inputs and outputs are observed.</p>
+
+          <h4>Black Box Test Design Techniques</h4>
+          <ul>
+            <li><strong>Equivalence Partitioning (EP)</strong> — divides input domain into classes; one representative value tested per class</li>
+            <li><strong>Boundary Value Analysis (BVA)</strong> — tests at the extreme edges of valid and invalid ranges</li>
+            <li><strong>Decision Table Testing</strong> — tests combinations of conditions and their corresponding actions</li>
+            <li><strong>State Transition Testing</strong> — tests system behavior based on state changes</li>
+            <li><strong>Use Case Testing</strong> — tests end-to-end user scenarios based on use cases</li>
+          </ul>
+
+          <h3>Test Cases for Online Examination System</h3>
+
+          <!-- MARKS -->
+          <h4>Field 1: Marks (Valid range: 0 to 100)</h4>
+
+          <p><strong>Equivalence Partitioning:</strong></p>
+          <table>
+            <tr><th>Class</th><th>Range</th><th>Representative Value</th><th>Expected Result</th></tr>
+            <tr><td>Invalid Class 1</td><td>Marks &lt; 0</td><td>-5</td><td>Error — Invalid input</td></tr>
+            <tr><td class="success">Valid Class</td><td>0 ≤ Marks ≤ 100</td><td>50</td><td>Accepted</td></tr>
+            <tr><td>Invalid Class 2</td><td>Marks &gt; 100</td><td>110</td><td>Error — Invalid input</td></tr>
+          </table>
+
+          <p><strong>Boundary Value Analysis:</strong></p>
+          <table>
+            <tr><th>TC</th><th>Input</th><th>Type</th><th>Expected Result</th></tr>
+            <tr><td>TC1</td><td>-1</td><td>Just below minimum</td><td>Invalid</td></tr>
+            <tr><td>TC2</td><td>0</td><td>Minimum</td><td>Valid</td></tr>
+            <tr><td>TC3</td><td>1</td><td>Just above minimum</td><td>Valid</td></tr>
+            <tr><td>TC4</td><td>50</td><td>Normal (mid-range)</td><td>Valid</td></tr>
+            <tr><td>TC5</td><td>99</td><td>Just below maximum</td><td>Valid</td></tr>
+            <tr><td>TC6</td><td>100</td><td>Maximum</td><td>Valid</td></tr>
+            <tr><td>TC7</td><td>101</td><td>Just above maximum</td><td>Invalid</td></tr>
+          </table>
+
+          <!-- ATTENDANCE -->
+          <h4>Field 2: Attendance (Valid range: 75% to 100%)</h4>
+
+          <p><strong>Equivalence Partitioning:</strong></p>
+          <table>
+            <tr><th>Class</th><th>Range</th><th>Representative Value</th><th>Expected Result</th></tr>
+            <tr><td>Invalid Class 1</td><td>Attendance &lt; 75%</td><td>60%</td><td>Error — Below minimum attendance</td></tr>
+            <tr><td class="success">Valid Class</td><td>75% ≤ Attendance ≤ 100%</td><td>85%</td><td>Accepted</td></tr>
+            <tr><td>Invalid Class 2</td><td>Attendance &gt; 100%</td><td>105%</td><td>Error — Invalid value</td></tr>
+          </table>
+
+          <p><strong>Boundary Value Analysis:</strong></p>
+          <table>
+            <tr><th>TC</th><th>Input</th><th>Type</th><th>Expected Result</th></tr>
+            <tr><td>TC1</td><td>74%</td><td>Just below minimum</td><td>Invalid</td></tr>
+            <tr><td>TC2</td><td>75%</td><td>Minimum</td><td>Valid</td></tr>
+            <tr><td>TC3</td><td>76%</td><td>Just above minimum</td><td>Valid</td></tr>
+            <tr><td>TC4</td><td>87%</td><td>Normal (mid-range)</td><td>Valid</td></tr>
+            <tr><td>TC5</td><td>99%</td><td>Just below maximum</td><td>Valid</td></tr>
+            <tr><td>TC6</td><td>100%</td><td>Maximum</td><td>Valid</td></tr>
+            <tr><td>TC7</td><td>101%</td><td>Just above maximum</td><td>Invalid</td></tr>
+          </table>
+
+          <!-- PASSWORD -->
+          <h4>Field 3: Password (Valid length: 8 to 16 characters)</h4>
+
+          <p><strong>Equivalence Partitioning:</strong></p>
+          <table>
+            <tr><th>Class</th><th>Length</th><th>Representative Value</th><th>Expected Result</th></tr>
+            <tr><td>Invalid Class 1</td><td>Length &lt; 8</td><td>"abc" (3 chars)</td><td>Error — Too short</td></tr>
+            <tr><td class="success">Valid Class</td><td>8 ≤ Length ≤ 16</td><td>"password1" (9 chars)</td><td>Accepted</td></tr>
+            <tr><td>Invalid Class 2</td><td>Length &gt; 16</td><td>"abcdefghijklmnopq" (17 chars)</td><td>Error — Too long</td></tr>
+          </table>
+
+          <p><strong>Boundary Value Analysis:</strong></p>
+          <table>
+            <tr><th>TC</th><th>Input Length</th><th>Type</th><th>Expected Result</th></tr>
+            <tr><td>TC1</td><td>7 characters</td><td>Just below minimum</td><td>Invalid</td></tr>
+            <tr><td>TC2</td><td>8 characters</td><td>Minimum</td><td>Valid</td></tr>
+            <tr><td>TC3</td><td>9 characters</td><td>Just above minimum</td><td>Valid</td></tr>
+            <tr><td>TC4</td><td>12 characters</td><td>Normal (mid-range)</td><td>Valid</td></tr>
+            <tr><td>TC5</td><td>15 characters</td><td>Just below maximum</td><td>Valid</td></tr>
+            <tr><td>TC6</td><td>16 characters</td><td>Maximum</td><td>Valid</td></tr>
+            <tr><td>TC7</td><td>17 characters</td><td>Just above maximum</td><td>Invalid</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q24 -->
+    <div class="tab-content" id="s3-tab-1">
+      <div class="question-block">
+        <h2 class="q-title">Q24. Explain CMMI and its five maturity levels. A software startup experiences delayed releases, inconsistent documentation, and frequent defects. Explain how implementing CMMI can improve its process. <span class="marks-badge">8M</span></h2>
+        <div class="answer-body">
+
+          <h3>CMMI — Overview</h3>
+          <p><strong>Capability Maturity Model Integration (CMMI)</strong> is a process improvement framework developed by the Software Engineering Institute (SEI) at Carnegie Mellon University. It provides a structured path for organizations to improve their software development processes — moving from chaotic, unpredictable processes to disciplined, continuously improving ones.</p>
+
+          <h3>Five Maturity Levels</h3>
+
+          <h4>Level 1 — Initial</h4>
+          <p>Processes are chaotic, ad hoc, and reactive. Success is accidental and depends on individual effort rather than defined processes. No formal planning, no documentation standards. Projects frequently miss deadlines and budgets.</p>
+
+          <h4>Level 2 — Managed</h4>
+          <p>Basic project management processes are established and followed. Projects are planned, monitored, and controlled. Requirements are managed, deliverables are tracked, and configuration management is in place. Success is repeatable for similar projects.</p>
+
+          <h4>Level 3 — Defined</h4>
+          <p>The organization has established a standardized set of processes for all projects. Documentation standards exist and are followed. All teams use a common methodology rather than individual ad hoc approaches. Processes are well-characterized and understood.</p>
+
+          <h4>Level 4 — Quantitatively Managed</h4>
+          <p>Processes are measured and controlled using statistical and quantitative methods. Management establishes measurable quality goals and uses data to understand process performance and predict outcomes. Variation in process performance is managed proactively.</p>
+
+          <h4>Level 5 — Optimizing</h4>
+          <p>The organization continuously improves its processes based on quantitative data and a deep understanding of root causes. Innovative techniques are evaluated and adopted. Focus shifts from managing quality to proactively preventing defects entirely.</p>
+
+          <h3>Applying CMMI to the Startup's Problems</h3>
+          <table>
+            <tr><th>Problem</th><th>Root Cause</th><th>CMMI Solution</th></tr>
+            <tr>
+              <td>Delayed releases</td>
+              <td>No structured project planning or scheduling (Level 1 behavior)</td>
+              <td>Level 2 — Implement project planning, requirement management, and progress tracking. Teams commit to realistic schedules and track against them.</td>
+            </tr>
+            <tr>
+              <td>Inconsistent documentation</td>
+              <td>Each team documents differently, or not at all — no organization-wide standard</td>
+              <td>Level 3 — Establish standardized documentation templates and processes across all projects. Every team follows the same documentation methodology.</td>
+            </tr>
+            <tr>
+              <td>Frequent software defects</td>
+              <td>No systematic testing process; no defect tracking or analysis</td>
+              <td>Level 3–4 — Define a mandatory testing process for all projects. At Level 4, track defect density metrics and use statistical analysis to identify which processes generate the most defects, then target improvements.</td>
+            </tr>
+          </table>
+
+          <h4>Expected Improvements After CMMI Adoption</h4>
+          <ul>
+            <li><strong>Short-term (Level 2):</strong> Releases become more predictable; deadline adherence improves as planning is formalized.</li>
+            <li><strong>Medium-term (Level 3):</strong> Documentation becomes consistent and usable; new team members onboard faster; defects are tracked and categorized.</li>
+            <li><strong>Long-term (Level 4–5):</strong> Defect rates drop measurably as processes are optimized based on data; the startup becomes capable of scaling without quality degrading.</li>
+          </ul>
+
+          <div class="callout good">
+            <strong>Conclusion:</strong> CMMI gives the startup a structured roadmap — it doesn't need to jump to Level 5 immediately. Starting at Level 2 alone would address delayed releases. Moving to Level 3 fixes documentation. The framework provides incremental, measurable progress toward software quality and process maturity.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end section III -->
+
+</div><!-- end page-wrapper -->
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.section-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  function showTab(section, i) {
+    const panel = document.getElementById(section);
+    panel.querySelectorAll('.tab-content').forEach((el, idx) => {
+      el.classList.toggle('active', idx === i);
+    });
+    panel.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === i);
+    });
+  }
+</script>
+</body>
+</html>
